@@ -1,6 +1,6 @@
 const Hero = () => {
     return(
-        <section id="home" className="min-h-screen flex items-center justify-center px-4">
+        <section id="Home" className="min-h-screen flex items-center justify-center px-4">
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-5xl md:text-7xl font-bold mb-6">
                     Hi, I'm <span className="text-blue-400">Raza</span>
@@ -13,12 +13,12 @@ const Hero = () => {
                     Passionate about clean code, user experience, and cutting-edge technology.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-                    View My Work
-                </button>
-                <button className="border border-gray-600 hover:border-gray-400 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-                    Get In Touch
-                </button>
+                <a href="#Projects" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                    My Work
+                </a>
+                <a href="#Contact" className="border border-gray-600 hover:border-gray-400 text-white px-8 py-3 rounded-lg font-medium transition-colors">
+                    Let's Connect
+                </a>
         </div>
             </div>
         </section>
