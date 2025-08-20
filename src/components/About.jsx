@@ -1,41 +1,82 @@
-const About = () => {
+import GlassCard from "./GlassCard";
+
+const About = ({theme}) => {
+    const glowColors = theme === 'dark' ? 'blue' : 'purple';
     return (
-        <section id="About" className="py-20 px-4 bg-gray-900">
+        <section id="About" className="py-20 px-4">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-4xl font-bold text-center mb-16">About Me & My Skills</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
                 
-                <div className="bg-gray-800 p-6 rounded-lg flex flex-col transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
-                    <h3 className="text-2xl font-bold text-blue-400 mb-4 text-center">AI & Machine Learning</h3>
-                    <div className="flex-grow">
-                    <ul className="space-y-2 text-gray-300">
-                        <li>Python</li>
-                        <li>PyTorch</li>
-                        <li>Scikit-learn</li>
-                        <li>Pandas</li>
-                        <li>NumPy</li>
-                        <li>OpenCV</li>
-                        <li>Mediapipe</li>
-                    </ul>
-                    </div>
-                </div>
+                <GlassCard glowColor={glowColors} rotateDirection="left" theme={theme}>
+                        <h3 className="text-2xl font-bold text-purple-600 dark:text-blue-400 mb-6">AI & Machine Learning</h3>
+                        <ul className="space-y-4 text-gray-700 dark:text-white">
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Python
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                PyTorch
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Scikit-Learn
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Pandas
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Numpy
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                OpenCV
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Mediapipe
+                            </li>
+                        </ul>
+                    </GlassCard>
 
 
-                <div className="bg-gray-800 p-6 rounded-lg flex flex-col transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
-                    <h3 className="text-2xl font-bold text-blue-400 mb-4 text-center">Full-Stack Web Development</h3>
-                    <div className="flex-grow">
-                    <ul className="space-y-2 text-gray-300">
-                        <li>JavaScript, HTML, CSS</li>
-                        <li>React</li>
-                        <li>Flask</li>
-                        <li>Django</li>
-                        <li>Node.js</li>
-                        <li>Database Management</li>
-                        <li>Modular Design</li>
-                    </ul>
-                    </div>
-                </div>
+                    <GlassCard glowColor={glowColors} rotateDirection="right" theme={theme}>
+                        <h3 className="text-2xl font-bold text-purple-600 dark:text-blue-400 mb-6">Full Stack Web Development</h3>
+                        <ul className="space-y-4 text-gray-700 dark:text-white">
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                JavaScript, HTML, CSS
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                React
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Flask
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Django
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Node.js
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Database Management
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Modular Design
+                            </li>
+                        </ul>
+                    </GlassCard>
 
                 <div className="mt-16 text-center w-full">
                 <h3 className="text-2xl font-bold text-center justify-center mb-8">Core Technologies</h3>

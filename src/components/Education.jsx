@@ -1,33 +1,61 @@
-const Education = () => {
+import GlassCard from "./GlassCard";
+const Education = ({theme}) => {
+    const glowColor = theme === 'dark' ? 'blue' : 'purple';
     return(
         <section id="Education" className="py-20 px-4">
             <div className="max-w-4xl mx-auto">
                 <h2 className="text-4xl font-bold text-center mb-16">Education</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="bg-gray-800 rounded-lg p-6 transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
-                        <h3 className="text-2xl font-bold text-blue-400 mb-2">University of Massachusetts Amherst</h3>
-                        <p className="text-lg font-semibold mb-1">Honors Bachelor of Science in Computer Science <p className=" text-green-400 mb-4 text-right">GPA: 4.0/4.0</p></p>
+                <GlassCard glowColor={glowColor} rotateDirection="left" theme={theme}>
+                        <h3 className="text-2xl font-bold text-purple-500 dark:text-blue-400 mb-4">University of Massachusetts Amherst</h3>
+                        <div className="mb-6">
+                            <p className="text-lg font-semibold text-gray-700 dark:text-white mb-2">Honors Bachelor of Science in Computer Science</p>
+                            <p className="text-green-400 text-right font-bold">GPA: 4.0/4.0</p>
+                        </div>
                         
-                        <p className="text-gray-300">
-                        Relevant Coursework:
-                        <ul className="list-disc list-inside space-y-1">
-                            <li>Object Oriented Programming</li>
-                            <li>Calculus I & II</li>
-                            <li>Linear Algebra</li>
+                        <div className="text-gray-700 dark:text-white">
+                            <p className="font-semibold mb-3">Relevant Coursework:</p>
+                            <ul className="space-y-2">
+                                <li className="flex items-center group/item">
+                                    <span className="w-2 h-2 bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                    Object Oriented Programming
+                                </li>
+                                <li className="flex items-center group/item">
+                                    <span className="w-2 h-2 bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                    Calculus I & II
+                                </li>
+                                <li className="flex items-center group/item">
+                                    <span className="w-2 h-2 bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                    Linear Algebra
+                                </li>
+                            </ul>
+                        </div>
+                    </GlassCard>
+                    <GlassCard glowColor="green" rotateDirection="right" theme={theme}>
+                        <h3 className="text-2xl font-bold text-green-400 mb-6">Honors & Awards</h3>
+                        <ul className="space-y-4 text-gray-700 dark:text-white">
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Dean's List - All Semesters
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Hack(H)er 413 Winner
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Chancellor's Awardee
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                JEE Mains 99.46 Percentile
+                            </li>
+                            <li className="flex items-center group/item">
+                                <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                Top 5% JEE Advanced
+                            </li>
                         </ul>
-                        </p>
-                    </div>
-
-                    <div className="bg-gray-800 rounded-lg p-6 transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
-                        <h3 className="text-2xl font-bold text-blue-400 mb-2">Honors & Awards</h3>
-                        <ul className="list-disc list-inside text-gray-300 space-y-2">
-                        <li>Dean's List - All Semesters</li>
-                        <li>Hack(H)er 413 Winner</li>
-                        <li>Chancellor's Awardee</li>
-                        <li>JEE Mains 99.46 Percentile</li>
-                        <li>Top 5% JEE Advanced</li>
-                        </ul>
-                    </div>
+                    </GlassCard>
                 </div>
             </div>
         </section>

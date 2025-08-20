@@ -1,4 +1,7 @@
-const Contact = () => {
+import GlassCard from "./GlassCard";
+import { Mail, Linkedin, Github } from "lucide-react";
+
+const Contact = ({theme}) => {
     return(
         <section id="Contact" className="py-20 px-4">
             <div className="max-w-2xl mx-auto text-center">
@@ -7,59 +10,95 @@ const Contact = () => {
             Ready to collaborate to make the future smarter and more efficient?<br></br>Let's Connect!
             </p>
             
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
-            <a
-                href="mailto:ralaqaband@umass.edu" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="relative block p-8 h-48 bg-gray-900 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 group"
-            >
-            <div 
-                className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-100 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundImage: "url('/email-image.png')",
-                    backgroundSize: "100px",}}
-            ></div>
-            <div className="relative z-10 flex items-center justify-center h-full">
-                <span className="text-2xl font-bold text-white">Email
-                <p className="text-sm text-gray-500 mb-4">ralaqaband@umass.edu</p>
-                </span>
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a 
+                        href="mailto:ralaqaband@umass.edu"
+                        className="block"
+                    >
+                        <GlassCard 
+                            glowColor="green" 
+                            rotateDirection="left" 
+                            theme={theme}
+                            className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                        >
+                            <div className="text-center py-8">
+                                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 transition-all duration-300
+                                        ${theme === 'dark' 
+                                        ? 'bg-green-500/20 text-green-400' 
+                                        : 'bg-green-500/10 text-green-600'  
+                                    }`}>
+                                    <Mail size={32} />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                                    Email
+                                </h3>
+                                <p className="text-sm text-gray-800 dark:text-white">
+                                    ralaqaband@umass.edu
+                                </p>
+                            </div>
+                        </GlassCard>
+                    </a>
 
-            </a>
-            <a
-                href="https://www.linkedin.com/in/razaalaqaband" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="relative block p-8 h-48 bg-gray-900 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 group"
-            >
-            <div 
-                className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-100 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundImage: "url('/linkedin-logo.png')" }}
-            ></div>
-            <div className="relative z-10 flex items-center justify-center h-full">
-                <span className="text-2xl font-bold text-white">LinkedIn
-                <p className="text-sm text-gray-500 mb-4">Raza Alaqaband</p>
-                </span>
-            </div>
-            </a>
-            <a
-                href="https://github.com/GeekyMS" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="relative block p-8 h-48 bg-gray-900 rounded-lg overflow-hidden transition-transform duration-300 hover:scale-105 group"
-            >
-            <div 
-                className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-100 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundImage: "url('/github-logo.png')" }}
-            ></div>
-            <div className="relative z-10 flex items-center justify-center h-full">
-                <span className="text-2xl font-bold text-white">GitHub
-                    <p className="text-sm text-gray-500 mb-4">GeekyMS</p>
-                </span>
-            </div>
+                    <a 
+                        href="https://linkedin.com/in/razaalaqaband"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block"
+                    >
+                        <GlassCard 
+                            glowColor="blue" 
+                            rotateDirection="right" 
+                            theme={theme}
+                            className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                        >
+                            <div className="text-center py-8">
+                                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 transition-all duration-300
+                                    ${theme === 'dark' 
+                                        ? 'bg-blue-500/20 text-blue-400' 
+                                        : 'bg-blue-500/10 text-blue-600'
+                                    }`}>
+                                    <Linkedin size={32} />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                                    LinkedIn
+                                </h3>
+                                <p className="text-sm text-gray-800 dark:text-white">
+                                    Raza Alaqaband
+                                </p>
+                            </div>
+                        </GlassCard>
+                    </a>
 
-            </a>
-            </div>
+                    <a 
+                        href="https://github.com/GeekyMS"
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="block"
+                    >
+                        <GlassCard 
+                            glowColor="purple" 
+                            rotateDirection="left" 
+                            theme={theme}
+                            className="cursor-pointer hover:scale-105 transition-transform duration-300"
+                        >
+                            <div className="text-center py-8">
+                                <div className={`inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-6 transition-all duration-300
+                                    ${theme === 'dark' 
+                                        ? 'bg-purple-500/20 text-purple-400' 
+                                        : 'bg-purple-500/10 text-purple-600'
+                                    }`}>
+                                    <Github size={32} />
+                                </div>
+                                <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+                                    GitHub
+                                </h3>
+                                <p className="text-sm text-gray-800 dark:text-white">
+                                    GeekyMS
+                                </p>
+                            </div>
+                        </GlassCard>
+                    </a>
+                </div>
         </div>
         </section>
     )

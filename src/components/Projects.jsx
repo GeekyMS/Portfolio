@@ -1,4 +1,8 @@
-const Projects = () => {
+import GlassCard from "./GlassCard";
+import { ArrowUpRight, ExternalLink } from 'lucide-react';
+
+
+const Projects = ({theme}) => {
     
     const projects = [
         { id: 1, title: 'AI-Powered Autonomous Cybersecurity Agent', 
@@ -18,7 +22,7 @@ const Projects = () => {
         ],
             date: 'February 2025', githubUrl: 'https://github.com/GeekyMS/PennyWise-Hackher413.git' },
     ]
-    
+    const glowColors = theme === 'dark' ? 'blue' : 'purple';
     return (
         <section id="Projects" className="py-20 px-4">
             <div className="max-w-8xl mx-auto ">
@@ -27,26 +31,32 @@ const Projects = () => {
                 </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-20">
                         {projects.map(project => (
-                            <div key={project.id} className="flex-shrink-0 bg-gray-800 rounded-2xl overflow-hidden transition-transform duration-300 hover:scale-105 hover:-translate-y-2">
-                                <div className="p-6 flex flex-col h-full">
-                                    <div className="flex-grow">
-                                    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-                                    <p className="text-sm text-gray-500 mb-4">{project.date}</p>
-                                    <p className="text-gray-400 mb-4">
-                                    {Array.isArray(project.description) ? (
-                                    <ul className="list-disc list-inside text-gray-400 mb-4 space-y-2">
+                            <GlassCard key = {project.id} glowColor={glowColors} rotateDirection={project.id == 1 ? 'left' : 'right'} theme={theme}>
+                                <a 
+                                    href={project.githubUrl} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="absolute top-4 right-4 z-20 opacity-100 group-hover/card:opacity-100 transition-all duration-300 transform translate-y-1 group-hover/card:translate-y-0"
+                                    aria-label={`View ${project.title} on GitHub`}
+                                >
+                                    <div>
+                                        <ArrowUpRight size={18} color={glowColors == 'blue' ? '#42a5f5' : '#9C27B0'}/>
+                                    </div>
+                                </a>
+                                <h3 className="text-2xl font-bold  text-purple-500 dark:text-blue-400 mb-6">{project.title}</h3>
+                                <p className="text-sm text-gray-700 dark:text-gray-300">{project.date}</p>
+                                {Array.isArray(project.description) ? (
+                                    <ul className="list-disc list-inside text-gray-700 dark:text-white mb-4 space-y-2">
                                         {project.description.map((point, idx) => (
-                                        <li key={idx}>{point}</li>
+                                        <li key={idx} className="flex items-center group/item">
+                                        <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                        {point}</li>
                                         ))}
                                     </ul>
                                     ) : (
                                     <p className="text-gray-400 mb-4">{project.description}</p>
                                     )}
-                                    </p>
-                                    </div>
-                                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-300 transition-colors self-start">View on Github</a>
-                                </div>
-                            </div>
+                            </GlassCard>
                         ))}
                     </div>
             </div>
