@@ -4,7 +4,7 @@ const Contact = () => {
             <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-8">Connect With Me</h2>
             <p className="text-gray-400 mb-12">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+            Ready to collaborate to make the future smarter and more efficient?<br></br>Let's Connect!
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
@@ -16,7 +16,7 @@ const Contact = () => {
             >
             <div 
                 className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-100 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundImage: "url('./../public/email-image.png')",
+                style={{ backgroundImage: "url('/email-image.png')",
                     backgroundSize: "100px",}}
             ></div>
             <div className="relative z-10 flex items-center justify-center h-full">
@@ -34,7 +34,7 @@ const Contact = () => {
             >
             <div 
                 className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-100 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundImage: "url('./../public/linkedin-logo.png')" }}
+                style={{ backgroundImage: "url('/linkedin-logo.png')" }}
             ></div>
             <div className="relative z-10 flex items-center justify-center h-full">
                 <span className="text-2xl font-bold text-white">LinkedIn
@@ -50,7 +50,7 @@ const Contact = () => {
             >
             <div 
                 className="absolute inset-0 bg-no-repeat bg-center bg-contain opacity-100 transition-transform duration-300 group-hover:scale-110"
-                style={{ backgroundImage: "url('./../public/github-logo.png')" }}
+                style={{ backgroundImage: "url('/github-logo.png')" }}
             ></div>
             <div className="relative z-10 flex items-center justify-center h-full">
                 <span className="text-2xl font-bold text-white">GitHub

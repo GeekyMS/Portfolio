@@ -11,11 +11,11 @@ const Navbar = () => {
                     <a href="#Home" className="text-gray-300 hover:text-white transition-colors no-underline">
                     Home
                     </a>
-                    <a href="#About" className="text-gray-300 hover:text-white transition-colors no-underline">
-                    About
-                    </a>
                     <a href="#Projects" className="text-gray-300 hover:text-white transition-colors no-underline">
                     Projects
+                    </a>
+                    <a href="#About" className="text-gray-300 hover:text-white transition-colors no-underline">
+                    About
                     </a>
                     <a href="#Education" className="text-gray-300 hover:text-white transition-colors no-underline">
                     Education
