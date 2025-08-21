@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="min-h-screen light:bg-white dark:bg-black text-gray-800 dark:text-gray-200">
       <Navbar theme = {theme} onThemeSwitch = {handleThemeSwitch}/>
-      <Hero />
+      <Hero theme = {theme}/>
       <Projects theme ={theme}/>
       <About theme ={theme}/>
       <Education theme={theme}/>
