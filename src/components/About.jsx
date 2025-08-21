@@ -1,8 +1,15 @@
 import GlassCard from "./GlassCard";
 import useScrollAnimation from "./useScrollAnimation";
 
+import pythonImg from '/python.png';
+import cImg from '/C.png';
+import cppImg from '/cpp.png';
+import javascriptImg from '/javascript.png';
+import htmlImg from '/html.png';
+import cssImg from '/css.png';
+
 const About = ({theme}) => {
-    // Multiple scroll animation hooks for different elements
+
     const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 });
     const [card1Ref, card1Visible] = useScrollAnimation({ threshold: 0.3 });
     const [card2Ref, card2Visible] = useScrollAnimation({ threshold: 0.3 });
@@ -132,34 +139,34 @@ const About = ({theme}) => {
                         >
                             
                             <div 
-                            className="w-10 h-16 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
-                            style={{ backgroundImage: "url('/python.png')" }}
-                            ></div>
+                    className="w-10 h-16 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
+                    style={{ backgroundImage: `url(${pythonImg})` }}
+                    ></div>
 
-                            <div 
-                            className="w-10 h-16 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
-                            style={{ backgroundImage: "url('/C.png')", animationDelay: '0.2s' }}
-                            ></div>
+                    <div 
+                    className="w-10 h-16 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
+                    style={{ backgroundImage: `url(${cImg})`, animationDelay: '0.2s' }}
+                    ></div>
 
-                            <div 
-                            className="w-10 h-16 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
-                            style={{ backgroundImage: "url('/cpp.png')", animationDelay: '0.4s' }}
-                            ></div>
+                    <div 
+                    className="w-10 h-16 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
+                    style={{ backgroundImage: `url(${cppImg})`, animationDelay: '0.4s' }}
+                    ></div>
 
-                            <div 
-                            className="w-10 h-18 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
-                            style={{ backgroundImage: "url('/javascript.png')", animationDelay: '0.6s' }}
-                            ></div>
+                    <div 
+                    className="w-10 h-18 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
+                    style={{ backgroundImage: `url(${javascriptImg})`, animationDelay: '0.6s' }}
+                    ></div>
 
-                            <div 
-                            className="w-10 h-20 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
-                            style={{ backgroundImage: "url('/html.png')", animationDelay: '0.8s' }}
-                            ></div>
-                            
-                            <div 
-                            className="w-10 h-12 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
-                            style={{ backgroundImage: "url('/css.png')", animationDelay: '1.0s' }}
-                            ></div>
+                    <div 
+                    className="w-10 h-20 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
+                    style={{ backgroundImage: `url(${htmlImg})`, animationDelay: '0.8s' }}
+                    ></div>
+                    
+                    <div 
+                    className="w-10 h-12 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
+                    style={{ backgroundImage: `url(${cssImg})`, animationDelay: '1.0s' }}
+                    ></div>
 
                         </div>
                     </div>
