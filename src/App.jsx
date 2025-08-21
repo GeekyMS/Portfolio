@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Education from './components/Education'
 import Contact from './components/Contact'
@@ -18,11 +19,12 @@ function App() {
   const handleThemeSwitch = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
-
   return (
     <div className="min-h-screen light:bg-white dark:bg-black text-gray-800 dark:text-gray-200">
+
       <Navbar theme = {theme} onThemeSwitch = {handleThemeSwitch}/>
       <Hero theme = {theme}/>
+      <Experience theme ={theme} />
       <Projects theme ={theme}/>
       <About theme ={theme}/>
       <Education theme={theme}/>

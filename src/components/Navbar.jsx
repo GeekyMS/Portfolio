@@ -13,6 +13,9 @@ const Navbar = ({theme, onThemeSwitch}) => {
                     <a href="#Home" className="dark:text-gray-300 dark:hover:text-white text-purple-600 hover:text-purple-500 transition-colors no-underline">
                     Home
                     </a>
+                    <a href="#Experience" className="dark:text-gray-300 dark:hover:text-white text-purple-600 hover:text-purple-500 transition-colors no-underline">
+                    Experience
+                    </a>
                     <a href="#Projects" className="dark:text-gray-300 dark:hover:text-white text-purple-600 hover:text-purple-500 transition-colors no-underline">
                     Projects
                     </a>
