@@ -4,17 +4,18 @@ import { useEffect } from "react";
 
 const Hero = ({ theme }) => {
     const mainText = "Hi, I'm Raza";
-    const subText = "AI & Machine Learning Engineer";
+    const subText = "Computer Science | AI/ML Enthusiast | Full-Stack Developer";
     const description = "Building intelligent systems that shape tomorrow's world";
+    const description2 = "Currently Pursuing Computer Science at UMass Amherst"
 
     const { displayedText: mainDisplay, isComplete: mainComplete } = useTypewriter(mainText, 100, 500);
     const { displayedText: subDisplay, isComplete: subComplete } = useTypewriter(subText, 80, mainComplete ? 800 : 999999);
-    const { displayedText: descDisplay } = useTypewriter(description, 50, subComplete ? 1000 : 999999);
+    const { displayedText: descDisplay, isComplete: descComplete } = useTypewriter(description, 50, subComplete ? 1000 : 999999);
+    const { displayedText: descDisplay2, isComplete: desc2Complete } = useTypewriter(description2, 50, descComplete ? 800 : 999999);
 
     const [scrollRef, isVisible] = useScrollAnimation({ threshold: 0.2 });
 
-
-        useEffect(() => {
+    useEffect(() => {
         const canvas = document.getElementById("heroCanvas");
         const ctx = canvas.getContext("2d");
 
@@ -63,7 +64,6 @@ const Hero = ({ theme }) => {
                 }
                 }
 
-
             if (mouse.x && mouse.y) {
             const dist = Math.hypot(p.x - mouse.x, p.y - mouse.y);
             if (dist < 150) {
@@ -93,7 +93,6 @@ const Hero = ({ theme }) => {
         };
     }, []);
 
-
     return (
         <section id='Home' className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
         <canvas id="heroCanvas" className="absolute inset-0 w-full h-full"></canvas>
@@ -114,17 +113,26 @@ const Hero = ({ theme }) => {
             )}
             </h2>
 
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            {descDisplay}
-            {subComplete && !descDisplay.includes(description) && (
-                <span className="animate-pulse text-pink-400">|</span>
-            )}
-            </p>
+            <div className="space-y-4 mb-12">
+                <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                {descDisplay}
+                {!descComplete && subComplete && (
+                    <span className="animate-pulse text-pink-400">|</span>
+                )}
+                </p>
+
+                <p className="text-md md:text-lg text-gray-500 dark:text-gray-500 max-w-2xl mx-auto leading-relaxed font-medium">
+                {descDisplay2}
+                {!desc2Complete && descComplete && (
+                    <span className="animate-pulse text-indigo-400">|</span>
+                )}
+                </p>
+            </div>
 
             <div 
             ref={scrollRef}
             className={`flex flex-col sm:flex-row gap-4 justify-center items-center transition-all duration-1000 ${
-                descDisplay.length > 20 
+                desc2Complete || descDisplay2.length > 10
                 ? 'opacity-100 transform translate-y-0' 
                 : 'opacity-0 transform translate-y-4'
             }`}
