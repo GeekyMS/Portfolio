@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Education from './components/Education'
 import Contact from './components/Contact'
 import About from './components/About'
+import Footer from './components/Footer'
 
 function App() {
   const [theme, setTheme] = useState('dark')
@@ -29,6 +30,7 @@ function App() {
       <About theme ={theme}/>
       <Education theme={theme}/>
       <Contact theme ={theme}/>
+      <Footer theme={theme} />
     </div>
   )
 }
