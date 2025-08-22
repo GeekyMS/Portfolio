@@ -138,7 +138,7 @@ const About = ({theme}) => {
                             }`}
                         >
                             
-                    <div 
+                            <div 
                     className="w-10 h-16 bg-contain bg-no-repeat bg-center opacity-100 animate-float"
                     style={{ backgroundImage: `url(${pythonImg})` }}
                     ></div>

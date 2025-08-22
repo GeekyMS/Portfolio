@@ -28,8 +28,8 @@ green: {
     glow: "from-green-600/50 via-purple-600/50 to-green-600/50"
     },
     light: {
-    refraction: "to-green-300/30",
-    glow: "from-green-400/40 via-emerald-400/40 to-green-400/40"
+    refraction: "to-green-400/30",
+    glow: "from-green-500/40 via-emerald-500/40 to-green-500/40"
     }
 },
 purple: {
@@ -80,14 +80,14 @@ return (
     <div className={`absolute inset-0 rounded-3xl transition-all duration-700 ease-out
     ${theme === "Dark" 
         ? (isHovered ? 'bg-white/20 backdrop-blur-xl' : 'bg-white/10 backdrop-blur-lg')
-        : (isHovered ? 'bg-black/15 backdrop-blur-xl' : 'bg-black/8 backdrop-blur-lg')
+        : (isHovered ? 'bg-gray-600/15 backdrop-blur-xl' : 'bg-black/8 backdrop-blur-lg')
     }`} 
     />
     
     <div className={`absolute inset-0 rounded-3xl transition-all duration-700 ease-out
     ${isHovered 
-        ? `bg-gradient-to-br ${theme === "Dark" ? "from-white/30" : "from-black/20"} via-transparent ${colors.refraction}` 
-        : `bg-gradient-to-br ${theme === "Dark" ? "from-white/20" : "from-black/15"} via-transparent ${colors.refraction.replace('/20', '/15').replace('/30', '/20')}`
+        ? `bg-gradient-to-br ${theme === "Dark" ? "from-white/30" : "from-gray-600/20"} via-transparent ${colors.refraction}` 
+        : `bg-gradient-to-br ${theme === "Dark" ? "from-white/20" : "from-gray-600/15"} via-transparent ${colors.refraction.replace('/20', '/15').replace('/30', '/20')}`
     }`} 
     />
     
@@ -97,14 +97,14 @@ return (
             ? 'bg-gradient-to-b from-white/40 via-white/20 to-transparent opacity-100' 
             : 'bg-gradient-to-b from-white/30 via-white/15 to-transparent opacity-70')
         : (isHovered
-            ? 'bg-gradient-to-b from-black/25 via-black/15 to-transparent opacity-100'
-            : 'bg-gradient-to-b from-black/20 via-black/10 to-transparent opacity-70')
+            ? 'bg-gradient-to-b from-gray-600/25 via-gray-600/15 to-transparent opacity-100'
+            : 'bg-gradient-to-b from-gray-600/20 via-gray-600/10 to-transparent opacity-70')
     }`} 
     />
     
     <div className={`absolute inset-0 rounded-3xl shadow-2xl 
     ${theme === "Dark" 
-        ? 'border border-white/30 shadow-black/50' 
+        ? 'border border-white/30 shadow-gray-700/50' 
         : 'border border-black/20 shadow-gray-500/30'
     }`} 
     />
