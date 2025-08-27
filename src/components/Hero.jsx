@@ -1,4 +1,4 @@
-import useTypewriter from './useTypeWriter';
+import useTypewriter from './useTypewriter';
 import useScrollAnimation from './useScrollAnimation';
 import { useEffect } from "react";
 
