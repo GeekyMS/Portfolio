@@ -16,12 +16,10 @@ const Projects = ({theme}) => {
         "Designed a modular Flask backend that streams ML and LLM outputs seamlessly to the frontend.",
         "Delivered a fully operational system demonstrating end-to-end capability—from packet sniffing to threat explanation and visualization."],
             date: 'June 2025 - August 2025', githubUrl: 'https://github.com/GeekyMS/Autonomous-AI-Cybersecurity-Agent.git' },
-        { id: 2, title: 'PennyWise ', description: [`Awarded "Best Beginner Hack" at UMass Amherst's 24-hour Hack(H)er413 for a smart financial management
-        platform aimed at helping students manage their finances.`,
-        `Architected and implemented a modular and scalable full-stack web application using HTML, CSS, and
-        JavaScript (frontend) and Python with Django (backend), delivering a seamless user experience.`,
-        `Collaborated closely with a team to integrate diverse tools under tight deadlines, ensuring system stability and
-        consistent performance across all components.`
+        { id: 2, title: 'PennyWise ', description: [`Built a financial management platform enabling students to track expenses, loans, and savings through interactive dashboards.`,
+        `Engineered a scalable Django backend with relational data models and implemented advanced SQL queries for efficient data handling.`,
+        `Designed the front-end in HTML, CSS, and JavaScript with a focus on usability, accessibility, and clear financial visualization.`,
+        `Worked with a team to deliver a functional prototype within a 24-hour hackathon; awarded Best Beginner Hack for innovation, usability, and technical execution.`
         ],
             date: 'February 2025', githubUrl: 'https://github.com/GeekyMS/PennyWise-Hackher413.git' },
     ]
