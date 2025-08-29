@@ -7,13 +7,14 @@ const Projects = ({theme}) => {
     const [projectsRef, projectsVisible] = useScrollAnimation({ threshold: 0.2 });
     
     const projects = [
-        { id: 1, title: 'AI-Powered Autonomous Cybersecurity Agent', 
+        { id: 1, title: 'Project Sentinel', 
             description: [
-        "Building an AI agent that monitors live network traffic, detects anomalies using a trained ML model, and explains threats via GPT-4",
-        "Extracting real-time packet features with Scapy and classifying threats using scikit-learn",
-        "Integrating OpenAI's API to generate human-readable summaries of detected threats",
-        "Logging flagged activity and LLM interpretations for auditability and future response automation",
-        "Designing a modular, scalable software pipeline that integrates machine learning with real-time data stream processing"],
+        "Developed and deployed a full-stack, autonomous cybersecurity platform capable of real-time threat monitoring and AI-driven analysis.",
+        "Trained an XGBoost machine learning model to classify malicious network traffic, achieving 95.9% accuracy and 98.7% recall on test data.",
+        "Integrated LLMs (via OpenAI API) to generate human-readable reports that explain attack types, compare classifier confidence, and provide actionable security insights.",
+        "Built a React-based dashboard with real-time visualizations of network anomalies, color-coded by severity for intuitive monitoring.",
+        "Designed a modular Flask backend that streams ML and LLM outputs seamlessly to the frontend.",
+        "Delivered a fully operational system demonstrating end-to-end capability—from packet sniffing to threat explanation and visualization."],
             date: 'June 2025 - August 2025', githubUrl: 'https://github.com/GeekyMS/Autonomous-AI-Cybersecurity-Agent.git' },
         { id: 2, title: 'PennyWise ', description: [`Awarded "Best Beginner Hack" at UMass Amherst's 24-hour Hack(H)er413 for a smart financial management
         platform aimed at helping students manage their finances.`,
