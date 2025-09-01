@@ -10,11 +10,11 @@ import cssImg from '/css.png';
 
 const About = ({theme}) => {
 
-    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2 });
-    const [card1Ref, card1Visible] = useScrollAnimation({ threshold: 0.3 });
-    const [card2Ref, card2Visible] = useScrollAnimation({ threshold: 0.3 });
-    const [techTitleRef, techTitleVisible] = useScrollAnimation({ threshold: 0.4 });
-    const [techIconsRef, techIconsVisible] = useScrollAnimation({ threshold: 0.3 });
+    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.2, triggerOnce: false });
+    const [card1Ref, card1Visible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
+    const [card2Ref, card2Visible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
+    const [techTitleRef, techTitleVisible] = useScrollAnimation({ threshold: 0.4, triggerOnce: false });
+    const [techIconsRef, techIconsVisible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
 
     const glowColors = theme === 'dark' ? 'blue' : 'purple';
 
@@ -25,8 +25,8 @@ const About = ({theme}) => {
                     ref={titleRef}
                     className={`text-4xl font-bold text-center mb-16 transition-all duration-1000 ${
                         titleVisible
-                        ? 'opacity-100 translate-y-0'
-                        : 'opacity-0 translate-y-10'
+                        ? 'opacity-100 translate-x-0 md:translate-y-0' 
+                        : 'opacity-0 translate-x-8 md:translate-x-0 md:translate-y-20'
                     }`}
                 >
                     About Me & My Skills
@@ -34,13 +34,12 @@ const About = ({theme}) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-                    {/* AI & Machine Learning Card */}
                     <div
                         ref={card1Ref}
                         className={`transition-all duration-1000 transform ${
-                            card1Visible
-                            ? 'opacity-100 translate-x-0 rotate-0'
-                            : 'opacity-0 -translate-x-10 -rotate-3'
+                            card1Visible 
+                            ? 'opacity-100 translate-x-0 md:translate-y-0 rotate-0' 
+                            : 'opacity-0 -translate-x-10 md:translate-x-0 md:translate-y-10 -rotate-3'
                         }`}
                     >
                         <GlassCard glowColor={glowColors} rotateDirection="left" theme={theme}>
@@ -78,13 +77,12 @@ const About = ({theme}) => {
                         </GlassCard>
                     </div>
 
-                    {/* Full Stack Web Development Card */}
                     <div
                         ref={card2Ref}
                         className={`transition-all duration-1000 delay-200 transform ${
-                            card2Visible
-                            ? 'opacity-100 translate-x-0 rotate-0'
-                            : 'opacity-0 translate-x-10 rotate-3'
+                            card2Visible 
+                            ? 'opacity-100 translate-x-0 md:translate-y-0 rotate-0' 
+                            : 'opacity-0 translate-x-10 md:translate-x-0 md:translate-y-10 rotate-3'
                         }`}
                     >
                         <GlassCard glowColor={glowColors} rotateDirection="right" theme={theme}>
@@ -122,7 +120,6 @@ const About = ({theme}) => {
                         </GlassCard>
                     </div>
 
-                    {/* Core Technologies Section */}
                     <div
                         ref={techTitleRef}
                         className={`mt-16 text-center md:col-span-2 transition-all duration-1000 ${

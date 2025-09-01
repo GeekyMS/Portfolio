@@ -3,9 +3,9 @@ import { Mail, Linkedin, Github } from "lucide-react";
 import useScrollAnimation from "./useScrollAnimation";
 
 const Contact = ({theme}) => {
-    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
-    const [descRef, descVisible] = useScrollAnimation({ threshold: 0.3 });
-    const [cardsRef, cardsVisible] = useScrollAnimation({ threshold: 0.2 });
+    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
+    const [descRef, descVisible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
+    const [cardsRef, cardsVisible] = useScrollAnimation({ threshold: 0.2, triggerOnce: false });
 
     return(
         <section id="Contact" className="py-20 px-4">

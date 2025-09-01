@@ -13,7 +13,7 @@ const Hero = ({ theme }) => {
     const { displayedText: descDisplay, isComplete: descComplete } = useTypewriter(description, 50, subComplete ? 1000 : 999999);
     const { displayedText: descDisplay2, isComplete: desc2Complete } = useTypewriter(description2, 50, descComplete ? 800 : 999999);
 
-    const [scrollRef, isVisible] = useScrollAnimation({ threshold: 0.2 });
+    const [scrollRef, isVisible] = useScrollAnimation({ threshold: 0.2, triggerOnce: false });
 
     useEffect(() => {
         const canvas = document.getElementById("heroCanvas");

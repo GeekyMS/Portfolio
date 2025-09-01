@@ -3,8 +3,8 @@ import { ArrowUpRight, ExternalLink } from 'lucide-react';
 import useScrollAnimation from "./useScrollAnimation";
 
 const Projects = ({theme}) => {
-    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
-    const [projectsRef, projectsVisible] = useScrollAnimation({ threshold: 0.2 });
+    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
+    const [projectsRef, projectsVisible] = useScrollAnimation({ threshold: 0.2, triggerOnce: false });
     
     const projects = [
         { id: 1, title: 'Project Sentinel', 
@@ -33,8 +33,8 @@ const Projects = ({theme}) => {
                     ref={titleRef}
                     className={`text-4xl font-bold text-center mb-12 transition-all duration-1000 ${
                         titleVisible 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-10'
+                        ? 'opacity-100 translate-x-0 md:translate-y-0' 
+                        : 'opacity-0 -translate-x-8 md:translate-x-0 md:translate-y-10'
                     }`}
                 >
                     Featured Projects
@@ -42,10 +42,10 @@ const Projects = ({theme}) => {
                 
                 <div 
                     ref={projectsRef}
-                    className={`grid grid-cols-1 md:grid-cols-2 gap-8 p-20 transition-all duration-1000 delay-300 ${
+                    className={`grid grid-cols-1 md:grid-cols-2 gap-8 p-4 sm:p-20 transition-all duration-1000 delay-300 ${
                         projectsVisible 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-20'
+                        ? 'opacity-100 translate-x-0 md:translate-y-0' 
+                        : 'opacity-0 translate-x-8 md:translate-x-0 md:translate-y-20'
                     }`}
                 >
                     {projects.map(project => (
@@ -66,8 +66,8 @@ const Projects = ({theme}) => {
                             {Array.isArray(project.description) ? (
                                 <ul className="list-disc list-inside text-gray-700 dark:text-white mb-4 space-y-2">
                                     {project.description.map((point, idx) => (
-                                    <li key={idx} className="flex items-center group/item">
-                                    <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
+                                    <li key={idx} className="flex items-start group/item">
+                                    <span className="w-2 h-2  bg-purple-500 dark:bg-blue-400 rounded-full mr-3 mt-2 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
                                     {point}</li>
                                     ))}
                                 </ul>

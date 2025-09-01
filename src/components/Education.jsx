@@ -2,9 +2,9 @@ import GlassCard from "./GlassCard";
 import useScrollAnimation from "./useScrollAnimation";
 
 const Education = ({theme}) => {
-    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3 });
-    const [card1Ref, card1Visible] = useScrollAnimation({ threshold: 0.3 });
-    const [card2Ref, card2Visible] = useScrollAnimation({ threshold: 0.3 });
+    const [titleRef, titleVisible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
+    const [card1Ref, card1Visible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
+    const [card2Ref, card2Visible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
 
     const glowColor = theme === 'dark' ? 'blue' : 'purple';
     
