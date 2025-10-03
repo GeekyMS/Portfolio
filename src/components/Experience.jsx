@@ -6,7 +6,7 @@ const Experience = ({theme}) => {
     const [experiencesRef, projectsVisible] = useScrollAnimation({ threshold: 0.2, triggerOnce: false });
     
     const Experiences = [
-        { id: 1, title: 'Undergrate Researcher - ML4ED Lab UMass', 
+        { id: 1, title: 'Undergraduate Researcher - ML4ED Lab UMass', 
             description: [
         `Engineering a Retrieval-Augmented Generation (RAG) system that uses vector databases and transformer LLMs to 
         automate the creation of "Related Works" sections for academic papers`,
