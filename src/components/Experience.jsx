@@ -6,7 +6,15 @@ const Experience = ({theme}) => {
     const [experiencesRef, projectsVisible] = useScrollAnimation({ threshold: 0.2, triggerOnce: false });
     
     const Experiences = [
-        { id: 1, title: 'Orientation Leader', 
+        { id: 1, title: 'Undergrate Researcher - ML4ED Lab UMass', 
+            description: [
+        `Engineering a Retrieval-Augmented Generation (RAG) system that uses vector databases and transformer LLMs to 
+        automate the creation of "Related Works" sections for academic papers`,
+        "Designing and implementing a novel benchmarking pipeline with custom metrics to rigorously evaluate model outputs for factual grounding, hallucination rates, and semantic alignment",
+        `Contributing to a research platform that is projecting a 10-15% reduction in factual hallucinations compared to baseline LLMs 
+        and is projected to increase overall research throughput by over 10%`],
+            date: 'September 2025 - Present'},
+        { id: 2, title: 'Orientation Leader', 
             description: [
         `Contributed to the successful execution of a university-wide orientation for over 8,800 students and families through
         direct support and logistical assistance.`,
