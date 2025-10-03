@@ -17,12 +17,12 @@ const Experience = ({theme}) => {
         { id: 2, title: 'Orientation Leader', 
             description: [
         `Contributed to the successful execution of a university-wide orientation for over 8,800 students and families through
-        direct support and logistical assistance.`,
-        "Drove digital outreach by managing a social media strategy that generated over 15,500 views.",
+        direct support and logistical assistance`,
+        "Drove digital outreach by managing a social media strategy that generated over 15,500 views",
         `Mentored new students by leading small-group discussions and guiding them to college-specific resources to ensure
-        a successful academic and social transition.`,
+        a successful academic and social transition`,
         `Served as a student panelist during Q&A sessions, addressing parent concerns and providing firsthand information
-        about the university experience.`],
+        about the university experience`],
             date: 'May 2025 - August 2025'},
     ]
     
