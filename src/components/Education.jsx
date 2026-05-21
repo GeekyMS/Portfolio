@@ -6,53 +6,45 @@ const Education = ({theme}) => {
     const [card1Ref, card1Visible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
     const [card2Ref, card2Visible] = useScrollAnimation({ threshold: 0.3, triggerOnce: false });
 
-    const glowColor = theme === 'dark' ? 'blue' : 'purple';
-    
     return(
-        <section id="Education" className="py-20 px-4">
+        <section id="Education" className="py-20 px-4 border-t-2 border-current">
             <div className="max-w-4xl mx-auto">
-                <h2 
+                <div 
                     ref={titleRef}
-                    className={`text-4xl font-bold text-center mb-16 transition-all duration-1000 ${
-                        titleVisible 
-                        ? 'opacity-100 translate-y-0' 
-                        : 'opacity-0 translate-y-10'
+                    className={`mb-16 transition-all duration-1000 ${
+                        titleVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                     }`}
                 >
-                    Education
-                </h2>
+                    <div className="eink-border p-4 inline-block bg-[#f0f0f0] dark:bg-[#1a1a1a]">
+                        <h2 className="text-4xl font-black m-0">Education</h2>
+                    </div>
+                </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div 
                         ref={card1Ref}
                         className={`transition-all duration-1000 transform ${
-                            card1Visible 
-                            ? 'opacity-100 translate-x-0 scale-100' 
-                            : 'opacity-0 -translate-x-10 scale-95'
+                            card1Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                         }`}
                     >
-                        <GlassCard glowColor={glowColor} rotateDirection="left" theme={theme}>
-                            <h3 className="text-2xl font-bold text-purple-500 dark:text-blue-400 mb-4">University of Massachusetts Amherst</h3>
-                            <div className="mb-6">
-                                <p className="text-lg font-semibold text-gray-700 dark:text-white mb-2">Honors Bachelor of Science in Computer Science</p>
-                                <p className="text-green-400 text-right font-bold">GPA: 4.0/4.0</p>
+                        <GlassCard theme={theme}>
+                            <h3 className="text-2xl font-bold mb-4 text-current transition-colors duration-300 group-hover:text-[#ae0001] dark:group-hover:text-[#d3a625]">
+                                University of Massachusetts Amherst
+                            </h3>
+                            <div className="mb-6 font-mono">
+                                <p className="text-lg font-bold mb-2">B.S. in Computer Science</p>
+                                <p className="text-current transition-colors duration-300 group-hover:text-[#ae0001] dark:group-hover:text-[#d3a625] font-bold">GPA: 4.0/4.0</p>
                             </div>
                             
-                            <div className="text-gray-700 dark:text-white">
-                                <p className="font-semibold mb-3">Relevant Coursework:</p>
+                            <div className="text-sm opacity-90 font-mono">
+                                <p className="font-bold mb-3">Relevant Coursework:</p>
                                 <ul className="space-y-2">
-                                    <li className="flex items-center group/item">
-                                        <span className="w-2 h-2 bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                        Object Oriented Programming
+                                    {['Object Oriented Programming', 'Data Structures', 'Probability Theory', 'Calculus I, II & III', 'Linear Algebra'].map((course, idx) => (
+                                    <li key={idx} className="flex items-start">
+                                        <span className="w-2 h-2 bg-current mr-3 mt-1.5 flex-shrink-0 rounded-none transition-colors duration-300 group-hover:bg-[#ae0001] dark:group-hover:bg-[#d3a625]"></span>
+                                        {course}
                                     </li>
-                                    <li className="flex items-center group/item">
-                                        <span className="w-2 h-2 bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                        Calculus I & II
-                                    </li>
-                                    <li className="flex items-center group/item">
-                                        <span className="w-2 h-2 bg-purple-500 dark:bg-blue-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                        Linear Algebra
-                                    </li>
+                                    ))}
                                 </ul>
                             </div>
                         </GlassCard>
@@ -61,34 +53,20 @@ const Education = ({theme}) => {
                     <div 
                         ref={card2Ref}
                         className={`transition-all duration-1000 delay-200 transform ${
-                            card2Visible 
-                            ? 'opacity-100 translate-x-0 scale-100' 
-                            : 'opacity-0 translate-x-10 scale-95'
+                            card2Visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
                         }`}
                     >
-                        <GlassCard glowColor="green" rotateDirection="right" theme={theme}>
-                            <h3 className="text-2xl font-bold text-green-400 mb-6">Honors & Awards</h3>
-                            <ul className="space-y-4 text-gray-700 dark:text-white">
-                                <li className="flex items-center group/item">
-                                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                    Dean's List - All Semesters
+                        <GlassCard theme={theme}>
+                            <h3 className="text-2xl font-bold mb-6 text-current transition-colors duration-300 group-hover:text-[#ae0001] dark:group-hover:text-[#d3a625]">
+                                Honors & Awards
+                            </h3>
+                            <ul className="space-y-4 text-sm opacity-90 font-mono">
+                                {["Dean's List Honors", "$64,000 Chancellor's Award", "HackUMass XIII Winner", 'Hack(H)er 413 Winner', 'JEE Mains 99.46 Percentile', 'Top 5% JEE Advanced'].map((award, idx) => (
+                                <li key={idx} className="flex items-start">
+                                    <span className="w-2 h-2 bg-current mr-3 mt-1.5 flex-shrink-0 rounded-none transition-colors duration-300 group-hover:bg-[#ae0001] dark:group-hover:text-[#d3a625] group-hover:bg-[#ae0001] dark:group-hover:bg-[#d3a625]"></span>
+                                    {award}
                                 </li>
-                                <li className="flex items-center group/item">
-                                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                    Hack(H)er 413 Winner
-                                </li>
-                                <li className="flex items-center group/item">
-                                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                    Chancellor's Awardee
-                                </li>
-                                <li className="flex items-center group/item">
-                                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                    JEE Mains 99.46 Percentile
-                                </li>
-                                <li className="flex items-center group/item">
-                                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3 flex-shrink-0 transition-all duration-300 group-hover/item:w-3 group-hover/item:h-3"></span>
-                                    Top 5% JEE Advanced
-                                </li>
+                                ))}
                             </ul>
                         </GlassCard>
                     </div>
