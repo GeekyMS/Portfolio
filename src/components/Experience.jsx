@@ -10,7 +10,7 @@ const Experience = ({theme}) => {
             description: [
                 "Building AI & Cloud Infra."
             ],
-            date: 'May 2026 - Present | Boston, MA'},
+            date: 'May 2026 - Present | Amherst, MA'},
         { id: 2, title: 'Incoming Undergraduate Course Assistant | CICS UMass', 
             description: [
                 "Fostering student learning and academic development within the College of Information and Computer Science through structured instruction and course execution assistance.",
