@@ -39,7 +39,7 @@ const Education = ({theme}) => {
                             <div className="text-sm opacity-90 font-mono">
                                 <p className="font-bold mb-3">Relevant Coursework:</p>
                                 <ul className="space-y-2">
-                                    {['Object Oriented Programming', 'Data Structures', 'Probability Theory', 'Calculus I, II & III', 'Linear Algebra'].map((course, idx) => (
+                                    {['Object Oriented Programming', 'Data Structures', 'Probability Theory', 'Formal Language Theory', 'Programming Methodologies', 'Calculus I, II & III', 'Linear Algebra'].map((course, idx) => (
                                     <li key={idx} className="flex items-start">
                                         <span className="w-2 h-2 bg-current mr-3 mt-1.5 flex-shrink-0 rounded-none transition-colors duration-300 group-hover:bg-[#ae0001] dark:group-hover:bg-[#d3a625]"></span>
                                         {course}
