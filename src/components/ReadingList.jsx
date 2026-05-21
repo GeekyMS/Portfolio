@@ -14,7 +14,7 @@ const ReadingList = ({ theme }) => {
             progress: 13,
             // 13% represented in a 20-character block format
             bar: "███░░░░░░░░░░░░░░░░░",
-            target: "Studying bytecode virtual machines, scanning, and compilation mechanics to anchor independent systems research."
+            target: "Studying bytecode virtual machines, scanning, and compilation mechanics to anchor independent systems work."
         },
         {
             id: 2,
@@ -24,7 +24,7 @@ const ReadingList = ({ theme }) => {
             progress: 1,
             // 1% represented in a 20-character block format
             bar: "░░░░░░░░░░░░░░░░░░░░",
-            target: "Mastering storage engines, stream processing, and data encoding models to optimize large-scale AI pipelines."
+            target: "Mastering storage engines, stream processing, and data encoding models to build scalable, fault-tolerant backend architectures."
         }
     ];
 
@@ -38,7 +38,7 @@ const ReadingList = ({ theme }) => {
                     }`}
                 >
                     <div className="eink-border p-4 inline-block bg-[#f0f0f0] dark:bg-[#1a1a1a]">
-                        <h2 className="text-4xl font-black m-0">Reading List</h2>
+                        <h2 className="text-4xl font-black m-0">Read With Me // System Logs</h2>
                     </div>
                 </div>
 
