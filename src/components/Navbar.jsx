@@ -5,9 +5,7 @@ import { Menu, X } from 'lucide-react';
 const Navbar = ({theme, onThemeSwitch}) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+    const toggleMenu = () => setIsOpen(!isOpen);
 
     const navLinks = [
         { href: "#Home", text: "Home" },
@@ -19,19 +17,19 @@ const Navbar = ({theme, onThemeSwitch}) => {
     ];
 
     return (
-        <nav className="fixed top-0 w-full bg-white/80 dark:bg-black/80 backdrop-blur-md z-50">
+        <nav className="fixed top-0 w-full bg-[#f0f0f0] dark:bg-[#1a1a1a] border-b-2 border-current z-50 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
-                    <div className="text-purple-600 dark:text-white text-xl font-bold">
+                    <div className="text-xl font-black eink-border px-2 py-1">
                         RA
                     </div>
 
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-8 text-sm font-bold">
                         {navLinks.map((link) => (
                             <a
                                 key={link.href}
                                 href={link.href}
-                                className="dark:text-gray-300 dark:hover:text-white text-purple-600 hover:text-purple-500 transition-colors no-underline"
+                                className="hover:underline underline-offset-4 decoration-2 transition-all no-underline text-current"
                             >
                                 {link.text}
                             </a>
@@ -41,20 +39,20 @@ const Navbar = ({theme, onThemeSwitch}) => {
 
                     <div className="md:hidden flex items-center">
                         <ThemeSwitcher theme={theme} onThemeSwitch={onThemeSwitch} />
-                        <button onClick={toggleMenu} className="ml-4 text-gray-800 dark:text-gray-200">
+                        <button onClick={toggleMenu} className="ml-4">
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-white dark:bg-black/90`}>
+            <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#f0f0f0] dark:bg-[#1a1a1a] border-b-2 border-current`}>
                 {navLinks.map((link) => (
                     <a
                         key={link.href}
                         href={link.href}
                         onClick={toggleMenu}
-                        className="block py-2 px-4 text-sm dark:text-gray-300 dark:hover:text-white text-purple-600 hover:text-purple-500 transition-colors no-underline"
+                        className="block py-4 px-4 text-sm font-bold border-t-2 border-current hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors no-underline text-current"
                     >
                         {link.text}
                     </a>
