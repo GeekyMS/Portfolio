@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
 import Education from './components/Education'
+import ReadingList from './components/ReadingList'
 import Contact from './components/Contact'
 import About from './components/About'
 import Footer from './components/Footer'
@@ -28,6 +29,7 @@ function App() {
       <Experience theme ={theme} />
       <Projects theme ={theme}/>
       <About theme ={theme}/>
+      <ReadingList theme={theme} />
       <Education theme={theme}/>
       <Contact theme ={theme}/>
       <Footer theme={theme} />
