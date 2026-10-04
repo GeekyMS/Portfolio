@@ -15,7 +15,7 @@ const FlipProjectTile = ({ index, title, tag, category, year, what, why, href, g
             aria-label={`${title} — ${flipped ? 'why it exists' : 'what shipped'}`}
         >
             <div
-                className={`relative grid min-h-[360px] transition-transform duration-[400ms] ease-in-out [transform-style:preserve-3d] [grid-template-areas:'stack'] ${
+                className={`relative grid h-full min-h-[360px] transition-transform duration-[400ms] ease-in-out [transform-style:preserve-3d] [grid-template-areas:'stack'] ${
                     reducedMotion ? '' : flipped ? '[transform:rotateY(180deg)]' : ''
                 }`}
             >
