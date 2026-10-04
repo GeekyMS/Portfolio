@@ -25,3 +25,5 @@ dist-ssr
 
 # Files
 src/components/Cube.jsx
+# Local Claude Code skills
+.claude/skills/

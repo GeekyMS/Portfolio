@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import ThemeSwitcher from "./ThemeSwitcher";
 import { Menu, X } from 'lucide-react';
 
@@ -7,57 +8,59 @@ const Navbar = ({theme, onThemeSwitch}) => {
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
-    // Added ReadingList to the navigation flow
     const navLinks = [
-        { href: "#Home", text: "Home" },
-        { href: "#Experience", text: "Experience" },
-        { href: "#Projects", text: "Projects" },
-        { href: "#About", text: "About" },
-        { href: "#ReadingList", text: "Readings" },
-        { href: "#Education", text: "Education" },
-        { href: "#Contact", text: "Contact" },
+        { to: "/experience", text: "Experience" },
+        { to: "/work", text: "Work" },
+        { to: "/about", text: "About" },
     ];
 
     return (
-        <nav className="fixed top-0 w-full bg-[#f0f0f0] dark:bg-[#1a1a1a] border-b-2 border-current z-50 transition-colors duration-300">
+        <nav aria-label="Primary" className="fixed top-0 w-full bg-surface border-b-2 border-current z-50 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4">
                 <div className="flex justify-between items-center h-16">
-                    <div className="text-xl font-black eink-border px-2 py-1 select-none">
+                    <Link to="/" className="text-xl font-black eink-border px-2 py-1 select-none no-underline text-current">
                         RA
-                    </div>
+                    </Link>
 
                     <div className="hidden md:flex items-center space-x-8 text-sm font-bold font-mono">
                         {navLinks.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className="hover:underline underline-offset-4 decoration-2 transition-all no-underline text-current hover:text-[#ae0001] dark:hover:text-[#d3a625]"
+                            <NavLink
+                                key={link.to}
+                                to={link.to}
+                                className="hover:underline underline-offset-4 decoration-2 transition-all no-underline text-current hover:text-accent aria-[current=page]:underline"
                             >
                                 {link.text}
-                            </a>
+                            </NavLink>
                         ))}
                         <ThemeSwitcher theme={theme} onThemeSwitch={onThemeSwitch} />
                     </div>
 
                     <div className="md:hidden flex items-center">
                         <ThemeSwitcher theme={theme} onThemeSwitch={onThemeSwitch} />
-                        <button onClick={toggleMenu} className="ml-4">
+                        <button
+                            type="button"
+                            onClick={toggleMenu}
+                            aria-label={isOpen ? 'Close menu' : 'Open menu'}
+                            aria-expanded={isOpen}
+                            aria-controls="mobile-menu"
+                            className="ml-4"
+                        >
                             {isOpen ? <X size={24} /> : <Menu size={24} />}
                         </button>
                     </div>
                 </div>
             </div>
 
-            <div className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-[#f0f0f0] dark:bg-[#1a1a1a] border-b-2 border-current`}>
+            <div id="mobile-menu" className={`md:hidden ${isOpen ? 'block' : 'hidden'} bg-surface border-b-2 border-current`}>
                 {navLinks.map((link) => (
-                    <a
-                        key={link.href}
-                        href={link.href}
+                    <NavLink
+                        key={link.to}
+                        to={link.to}
                         onClick={toggleMenu}
-                        className="block py-4 px-4 text-sm font-bold font-mono border-t-2 border-current hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors no-underline text-current hover:text-[#ae0001] dark:hover:text-[#d3a625]"
+                        className="block py-4 px-4 text-sm font-bold font-mono border-t-2 border-current hover:bg-fg/10 transition-colors no-underline text-current hover:text-accent aria-[current=page]:bg-fg/10"
                     >
                         {link.text}
-                    </a>
+                    </NavLink>
                 ))}
             </div>
         </nav>

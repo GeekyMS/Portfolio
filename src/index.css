@@ -1,29 +1,78 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Palette. `static` keeps these as real CSS variables even when no class uses them. */
+@theme static {
+    --color-paper: #f0f0f0;   /* E-Ink light paper / dark-mode text */
+    --color-ink: #1a1a1a;     /* E-Ink black / dark-mode card surface */
+    --color-crimson: #ae0001; /* accent on light */
+    --color-gold: #d3a625;    /* accent on dark */
+}
+
+/* Semantic colors. They flip with the .dark class, so components say bg-surface,
+   text-fg or hover:text-accent once instead of pairing a light and a dark value. */
+@theme inline {
+    --color-page: var(--page);
+    --color-surface: var(--surface);
+    --color-fg: var(--fg);
+    --color-accent: var(--accent);
+    --color-accent-fg: var(--accent-fg);
+}
+
+:root {
+    --page: var(--color-paper);
+    --surface: var(--color-paper);
+    --fg: var(--color-ink);
+    --accent: var(--color-crimson);
+    --accent-fg: var(--color-gold);
+}
+
+.dark {
+    --page: var(--color-black);
+    --surface: var(--color-ink);
+    --fg: var(--color-paper);
+    --accent: var(--color-gold);
+    --accent-fg: var(--color-ink);
+}
+
 html {
     scroll-behavior: smooth;
-    background-color: #f0f0f0; /* E-Ink Light Paper */
-    color: #1a1a1a; /* E-Ink Black */
+    background-color: var(--page);
+    color: var(--fg);
 }
 
-html.dark {
-    background-color: #1a1a1a; /* E-Ink Dark Charcoal */
-    color: #f0f0f0; /* E-Ink Off-White */
-}
-
-/* E-Ink Structural Classes */
+/* E-Ink Structural Classes. These stay outside Tailwind's layers on purpose:
+   they override utilities such as hover:border-*, which is existing behavior. */
 .eink-border {
     border: 2px solid currentColor;
 }
 
 .eink-shadow {
-    box-shadow: 4px 4px 0px #1a1a1a;
+    box-shadow: 4px 4px 0px var(--fg);
 }
 
-.dark .eink-shadow {
-    box-shadow: 4px 4px 0px #f0f0f0;
+/* Keyboard focus ring in the accent color. In the base layer so utilities such as
+   focus-visible:outline-current on the tile buttons still win. */
+@layer base {
+    :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+    }
+}
+
+/* Boxed section heading. */
+.eink-title {
+    display: inline-block;
+    padding: 1rem;
+    border: 2px solid currentColor;
+    background-color: var(--surface);
+}
+
+@layer components {
+    /* Underlined mono link that turns accent on hover, e.g. "MORE ABOUT ME →". */
+    .link-arrow {
+        @apply inline-block font-mono text-sm font-bold underline underline-offset-4 hover:text-accent;
+    }
 }
 
 /* Typography Overrides */
@@ -31,6 +80,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Inter Tight', sans-serif;
     text-transform: uppercase;
     letter-spacing: -0.03em;
+    text-wrap: balance;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 p, span, li, a {
